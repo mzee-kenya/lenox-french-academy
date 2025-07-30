@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lenox French Academy | Learn French from A1 to B2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+  <style>
+    /* Base styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    h2 {
+      color: #1a237e;
+      margin-top: 25px;
+      border-left: 5px solid #2196f3;
+      padding-left: 10px;
+    }
+
+    .intro ul {
+      padding-left: 20px;
+      line-height: 1.8;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 10px 5px;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      background-color: #2196f3;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #0b7dda;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <h1>🇫🇷 Lenox French Academy</h1>
+      <p>Master French step-by-step from Beginner (A1) to Advanced (B2)</p>
+    </header>
+
+    <!-- Intro -->
+    <section class="intro">
+      <h2>📘 What You’ll Learn</h2>
+      <ul>
+        <li><strong>A1:</strong> Alphabet, Greetings, Introductions, Numbers…</li>
+        <li><strong>A2:</strong> Places, Hobbies, Past Tense, Travel…</li>
+        <li><strong>B1:</strong> Opinions, Future, Jobs, Media…</li>
+        <li><strong>B2:</strong> Subjunctive, Writing, Culture, Exam prep…</li>
+      </ul>
+    </section>
+
+    <!-- Buttons -->
+    <section class="actions">
+      <h2>🚀 Ready to Begin?</h2>
+      <a href="topics/a1-01-alphabet.html" class="btn">▶️ Start Learning</a>
+      <a href="topics.html" class="btn">📚 View All Topics</a>
+      <a href="placement-test.html" class="btn">🎓 Take Placement Test</a>
+      <a href="about.html" class="btn">ℹ️ About Us</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Lenox French Academy | Learn French with Passion 🇫🇷</p>
+    </footer>
+
+  </div>
+</body>
+  </html>
