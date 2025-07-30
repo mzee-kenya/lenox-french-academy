@@ -4,20 +4,8 @@
   <meta charset="UTF-8" />
   <title>A1-02: Greetings | Lenox French Academy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-.conversation {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 2px solid #2e7d32;
-}
 
-.dialogue p {
-  margin: 10px 0;
-  background: #e8f5e9;
-  padding: 10px 15px;
-  border-left: 5px solid #4caf50;
-  border-radius: 8px;
-}
+  <style>
     body {
       margin: 0;
       padding: 0;
@@ -39,11 +27,24 @@
       color: #2e7d32;
     }
 
-    .greeting {
-      margin: 10px 0;
+    .top-nav {
+      margin-bottom: 20px;
+    }
+
+    .top-nav a {
+      font-weight: bold;
+      color: #2e7d32;
+      text-decoration: none;
+    }
+
+    .greeting, .question label {
       display: flex;
       align-items: center;
       gap: 10px;
+    }
+
+    .greeting {
+      margin: 10px 0;
     }
 
     .speakBtn {
@@ -59,13 +60,12 @@
       background: #1b5e20;
     }
 
-    .question {
-      margin-bottom: 20px;
-    }
-
-    .question label {
-      display: block;
-      margin: 5px 0;
+    .dialogue p {
+      margin: 10px 0;
+      background: #e8f5e9;
+      padding: 10px 15px;
+      border-left: 5px solid #4caf50;
+      border-radius: 8px;
     }
 
     .btn {
@@ -96,20 +96,18 @@
       margin-top: 20px;
     }
 
-    a {
-      text-decoration: none;
+    .conversation {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #2e7d32;
     }
 
-    .top-nav {
-      margin-bottom: 20px;
-    }
-
-    .top-nav a {
-      font-weight: bold;
-      color: #2e7d32;
+    .question {
+      margin: 20px 0;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="top-nav">
@@ -124,9 +122,32 @@
       <div class="greeting"><strong>Bonjour</strong> – Hello / Good morning <button class="speakBtn" onclick="speak('Bonjour')">🔊</button></div>
       <div class="greeting"><strong>Bonsoir</strong> – Good evening <button class="speakBtn" onclick="speak('Bonsoir')">🔊</button></div>
       <div class="greeting"><strong>Salut</strong> – Hi <button class="speakBtn" onclick="speak('Salut')">🔊</button></div>
-      <div class="greeting"><strong>Ça va ?</strong> – How are you? <button class="speakBtn" onclick="speak('Ça va')">🔊</button></div>
+      <div class="greeting"><strong>Ça va ?</strong> – How are you? <button class="speakBtn" onclick="speak('Ça va ?')">🔊</button></div>
       <div class="greeting"><strong>Au revoir</strong> – Goodbye <button class="speakBtn" onclick="speak('Au revoir')">🔊</button></div>
       <div class="greeting"><strong>Bonne nuit</strong> – Good night <button class="speakBtn" onclick="speak('Bonne nuit')">🔊</button></div>
+    </div>
+
+    <!-- Conversation Practice Section -->
+    <div class="conversation">
+      <h2>🗣️ Conversation Practice: Marc & Léa</h2>
+      <p><em>Read and listen. Try repeating each line after you hear it!</em></p>
+
+      <div class="dialogue">
+        <p><strong>Léa:</strong> Bonjour Marc ! Comment ça va ? <button class="speakBtn" onclick="speak('Bonjour Marc ! Comment ça va ?', 'female')">🔊</button></p>
+        <p><strong>Marc:</strong> Salut Léa ! Ça va bien, merci. Et toi ? <button class="speakBtn" onclick="speak('Salut Léa ! Ça va bien, merci. Et toi ?', 'male')">🔊</button></p>
+        <p><strong>Léa:</strong> Ça va super ! Tu vas où ? <button class="speakBtn" onclick="speak('Ça va super ! Tu vas où ?', 'female')">🔊</button></p>
+        <p><strong>Marc:</strong> Je rentre à la maison. Et toi ? <button class="speakBtn" onclick="speak('Je rentre à la maison. Et toi ?', 'male')">🔊</button></p>
+        <p><strong>Léa:</strong> Moi aussi. Tu as eu une bonne journée ? <button class="speakBtn" onclick="speak('Moi aussi. Tu as eu une bonne journée ?', 'female')">🔊</button></p>
+        <p><strong>Marc:</strong> Oui, c’était cool. Le prof de maths était drôle aujourd’hui ! <button class="speakBtn" onclick="speak('Oui, c’était cool. Le prof de maths était drôle aujourd’hui !', 'male')">🔊</button></p>
+        <p><strong>Léa:</strong> Haha, oui ! Il a fait une blague sur les devoirs. <button class="speakBtn" onclick="speak('Haha, oui ! Il a fait une blague sur les devoirs.', 'female')">🔊</button></p>
+        <p><strong>Marc:</strong> Tu as fini les devoirs ? <button class="speakBtn" onclick="speak('Tu as fini les devoirs ?', 'male')">🔊</button></p>
+        <p><strong>Léa:</strong> Pas encore, je vais les faire ce soir. <button class="speakBtn" onclick="speak('Pas encore, je vais les faire ce soir.', 'female')">🔊</button></p>
+        <p><strong>Marc:</strong> D’accord. On se voit demain à l’école ? <button class="speakBtn" onclick="speak('D’accord. On se voit demain à l’école ?', 'male')">🔊</button></p>
+        <p><strong>Léa:</strong> Bien sûr ! À quelle heure ? <button class="speakBtn" onclick="speak('Bien sûr ! À quelle heure ?', 'female')">🔊</button></p>
+        <p><strong>Marc:</strong> Vers huit heures, devant la classe. <button class="speakBtn" onclick="speak('Vers huit heures, devant la classe.', 'male')">🔊</button></p>
+        <p><strong>Léa:</strong> Parfait. À demain Marc ! <button class="speakBtn" onclick="speak('Parfait. À demain Marc !', 'female')">🔊</button></p>
+        <p><strong>Marc:</strong> À demain Léa ! Bonne soirée ! <button class="speakBtn" onclick="speak('À demain Léa ! Bonne soirée !', 'male')">🔊</button></p>
+      </div>
     </div>
 
     <!-- Quiz Section -->
@@ -176,33 +197,30 @@
       </div>
     </div>
   </div>
-<!-- Conversation Practice Section -->
-<div class="conversation">
-  <h2>🗣️ Conversation Practice: Marc & Léa</h2>
-  <p><em>Read and listen. Try repeating each line after you hear it!</em></p>
 
-  <div class="dialogue">
-    <p><strong>Léa:</strong> Bonjour Marc ! Comment ça va ? <button class="speakBtn" onclick="speak('Bonjour Marc ! Comment ça va ?')">🔊</button></p>
-    <p><strong>Marc:</strong> Salut Léa ! Ça va bien, merci. Et toi ? <button class="speakBtn" onclick="speak('Salut Léa ! Ça va bien, merci. Et toi ?')">🔊</button></p>
-    <p><strong>Léa:</strong> Ça va super ! Tu vas où ? <button class="speakBtn" onclick="speak('Ça va super ! Tu vas où ?')">🔊</button></p>
-    <p><strong>Marc:</strong> Je rentre à la maison. Et toi ? <button class="speakBtn" onclick="speak('Je rentre à la maison. Et toi ?')">🔊</button></p>
-    <p><strong>Léa:</strong> Moi aussi. Tu as eu une bonne journée ? <button class="speakBtn" onclick="speak('Moi aussi. Tu as eu une bonne journée ?')">🔊</button></p>
-    <p><strong>Marc:</strong> Oui, c’était cool. Le prof de maths était drôle aujourd’hui ! <button class="speakBtn" onclick="speak('Oui, c’était cool. Le prof de maths était drôle aujourd’hui !')">🔊</button></p>
-    <p><strong>Léa:</strong> Haha, oui ! Il a fait une blague sur les devoirs. <button class="speakBtn" onclick="speak('Haha, oui ! Il a fait une blague sur les devoirs.')">🔊</button></p>
-    <p><strong>Marc:</strong> Tu as fini les devoirs ? <button class="speakBtn" onclick="speak('Tu as fini les devoirs ?')">🔊</button></p>
-    <p><strong>Léa:</strong> Pas encore, je vais les faire ce soir. <button class="speakBtn" onclick="speak('Pas encore, je vais les faire ce soir.')">🔊</button></p>
-    <p><strong>Marc:</strong> D’accord. On se voit demain à l’école ? <button class="speakBtn" onclick="speak('D’accord. On se voit demain à l’école ?')">🔊</button></p>
-    <p><strong>Léa:</strong> Bien sûr ! À quelle heure ? <button class="speakBtn" onclick="speak('Bien sûr ! À quelle heure ?')">🔊</button></p>
-    <p><strong>Marc:</strong> Vers huit heures, devant la classe. <button class="speakBtn" onclick="speak('Vers huit heures, devant la classe.')">🔊</button></p>
-    <p><strong>Léa:</strong> Parfait. À demain Marc ! <button class="speakBtn" onclick="speak('Parfait. À demain Marc !')">🔊</button></p>
-    <p><strong>Marc:</strong> À demain Léa ! Bonne soirée ! <button class="speakBtn" onclick="speak('À demain Léa ! Bonne soirée !')">🔊</button></p>
-  </div>
-</div>
-
+  <!-- Script -->
   <script>
-    function speak(text) {
+    function speak(text, gender = 'female') {
       const utter = new SpeechSynthesisUtterance(text);
-      utter.lang = "fr-FR";
+      const voices = speechSynthesis.getVoices();
+      let frenchVoices = voices.filter(v => v.lang === "fr-FR");
+
+      let chosenVoice;
+      if (gender === 'female') {
+        chosenVoice = frenchVoices.find(v =>
+          v.name.toLowerCase().includes('céline') ||
+          v.name.toLowerCase().includes('hortense') ||
+          v.name.toLowerCase().includes('female')
+        );
+      } else {
+        chosenVoice = frenchVoices.find(v =>
+          v.name.toLowerCase().includes('thomas') ||
+          v.name.toLowerCase().includes('paul') ||
+          v.name.toLowerCase().includes('male')
+        );
+      }
+
+      utter.voice = chosenVoice || frenchVoices[0];
       speechSynthesis.speak(utter);
     }
 
@@ -228,4 +246,4 @@
     }
   </script>
 </body>
-        </html>
+</html>
