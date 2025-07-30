@@ -5,6 +5,19 @@
   <title>A1-02: Greetings | Lenox French Academy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+.conversation {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #2e7d32;
+}
+
+.dialogue p {
+  margin: 10px 0;
+  background: #e8f5e9;
+  padding: 10px 15px;
+  border-left: 5px solid #4caf50;
+  border-radius: 8px;
+}
     body {
       margin: 0;
       padding: 0;
@@ -163,6 +176,28 @@
       </div>
     </div>
   </div>
+<!-- Conversation Practice Section -->
+<div class="conversation">
+  <h2>🗣️ Conversation Practice: Marc & Léa</h2>
+  <p><em>Read and listen. Try repeating each line after you hear it!</em></p>
+
+  <div class="dialogue">
+    <p><strong>Léa:</strong> Bonjour Marc ! Comment ça va ? <button class="speakBtn" onclick="speak('Bonjour Marc ! Comment ça va ?')">🔊</button></p>
+    <p><strong>Marc:</strong> Salut Léa ! Ça va bien, merci. Et toi ? <button class="speakBtn" onclick="speak('Salut Léa ! Ça va bien, merci. Et toi ?')">🔊</button></p>
+    <p><strong>Léa:</strong> Ça va super ! Tu vas où ? <button class="speakBtn" onclick="speak('Ça va super ! Tu vas où ?')">🔊</button></p>
+    <p><strong>Marc:</strong> Je rentre à la maison. Et toi ? <button class="speakBtn" onclick="speak('Je rentre à la maison. Et toi ?')">🔊</button></p>
+    <p><strong>Léa:</strong> Moi aussi. Tu as eu une bonne journée ? <button class="speakBtn" onclick="speak('Moi aussi. Tu as eu une bonne journée ?')">🔊</button></p>
+    <p><strong>Marc:</strong> Oui, c’était cool. Le prof de maths était drôle aujourd’hui ! <button class="speakBtn" onclick="speak('Oui, c’était cool. Le prof de maths était drôle aujourd’hui !')">🔊</button></p>
+    <p><strong>Léa:</strong> Haha, oui ! Il a fait une blague sur les devoirs. <button class="speakBtn" onclick="speak('Haha, oui ! Il a fait une blague sur les devoirs.')">🔊</button></p>
+    <p><strong>Marc:</strong> Tu as fini les devoirs ? <button class="speakBtn" onclick="speak('Tu as fini les devoirs ?')">🔊</button></p>
+    <p><strong>Léa:</strong> Pas encore, je vais les faire ce soir. <button class="speakBtn" onclick="speak('Pas encore, je vais les faire ce soir.')">🔊</button></p>
+    <p><strong>Marc:</strong> D’accord. On se voit demain à l’école ? <button class="speakBtn" onclick="speak('D’accord. On se voit demain à l’école ?')">🔊</button></p>
+    <p><strong>Léa:</strong> Bien sûr ! À quelle heure ? <button class="speakBtn" onclick="speak('Bien sûr ! À quelle heure ?')">🔊</button></p>
+    <p><strong>Marc:</strong> Vers huit heures, devant la classe. <button class="speakBtn" onclick="speak('Vers huit heures, devant la classe.')">🔊</button></p>
+    <p><strong>Léa:</strong> Parfait. À demain Marc ! <button class="speakBtn" onclick="speak('Parfait. À demain Marc !')">🔊</button></p>
+    <p><strong>Marc:</strong> À demain Léa ! Bonne soirée ! <button class="speakBtn" onclick="speak('À demain Léa ! Bonne soirée !')">🔊</button></p>
+  </div>
+</div>
 
   <script>
     function speak(text) {
