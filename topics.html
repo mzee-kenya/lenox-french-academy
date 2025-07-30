@@ -62,6 +62,7 @@
       color: #1b5e20;
       font-weight: 600;
       transition: all 0.3s ease;
+      position: relative;
     }
 
     .topic-card:hover {
@@ -72,6 +73,14 @@
     .locked {
       opacity: 0.6;
       pointer-events: none;
+    }
+
+    .locked::after {
+      content: "🔒 Complete previous topic to unlock";
+      font-size: 0.8rem;
+      color: #777;
+      display: block;
+      margin-top: 5px;
     }
 
     .back-btn {
@@ -110,8 +119,8 @@
       <div class="topic-grid">
         <a href="topics/a1-01-alphabet.html" class="topic-card">A1-01: Alphabet</a>
         <a href="topics/a1-02-greetings.html" class="topic-card">A1-02: Greetings</a>
-        <a href="topics/a1-03-numbers.html" class="topic-card">A1-03: Numbers</a>
-        <a href="topics/a1-04-introductions.html" class="topic-card">A1-04: Introductions</a>
+        <a href="topics/a1-03-introductions.html" class="topic-card">A1-03: Introductions</a>
+        <a href="topics/a1-04-numbers.html" class="topic-card">A1-04: Numbers</a>
         <a href="topics/a1-05-basic-verbs.html" class="topic-card">A1-05: Basic Verbs</a>
       </div>
     </section>
@@ -148,5 +157,27 @@
     <a href="index.html" class="back-btn">🏠 Back to Home</a>
 
   </div>
+
+  <!-- Unlock Logic -->
+  <script>
+    const unlockedTopics = {
+      "topics/a1-01-alphabet.html": true,
+      "topics/a1-02-greetings.html": true,
+      "topics/a1-03-introductions.html": localStorage.getItem("a1-03-unlocked") === "true",
+      "topics/a1-04-numbers.html": localStorage.getItem("a1-04-unlocked") === "true",
+      "topics/a1-05-basic-verbs.html": localStorage.getItem("a1-05-unlocked") === "true"
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll(".topic-card");
+      links.forEach(link => {
+        const href = link.getAttribute("href");
+        if (href && unlockedTopics[href] === false) {
+          link.classList.add("locked");
+          link.setAttribute("href", "#");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
