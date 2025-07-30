@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Topics | Lenox French Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #a8e063, #56ab2f);
+      color: #1e1e1e;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #ffffffdd;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #2e7d32;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    h2 {
+      color: #2e7d32;
+      font-size: 1.5rem;
+      border-left: 6px solid #66bb6a;
+      padding-left: 12px;
+      margin-bottom: 15px;
+    }
+
+    .topic-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .topic-card {
+      flex: 1 1 calc(50% - 15px);
+      background: #e8f5e9;
+      border-left: 5px solid #388e3c;
+      border-radius: 10px;
+      padding: 15px 20px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #1b5e20;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .topic-card:hover {
+      background: #dcedc8;
+      transform: translateY(-3px);
+    }
+
+    .locked {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .back-btn {
+      margin-top: 40px;
+      display: inline-block;
+      padding: 12px 25px;
+      background: #2e7d32;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #1b5e20;
+    }
+
+    @media (max-width: 600px) {
+      .topic-card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>📚 All Topics</h1>
+      <p>Select a topic to begin learning</p>
+    </header>
+
+    <!-- A1 Topics -->
+    <section>
+      <h2>A1 – Beginner</h2>
+      <div class="topic-grid">
+        <a href="topics/a1-01-alphabet.html" class="topic-card">A1-01: Alphabet</a>
+        <a href="topics/a1-02-greetings.html" class="topic-card">A1-02: Greetings</a>
+        <a href="topics/a1-03-numbers.html" class="topic-card">A1-03: Numbers</a>
+        <a href="topics/a1-04-introductions.html" class="topic-card">A1-04: Introductions</a>
+        <a href="topics/a1-05-basic-verbs.html" class="topic-card">A1-05: Basic Verbs</a>
+      </div>
+    </section>
+
+    <!-- A2 Topics -->
+    <section>
+      <h2>A2 – Elementary</h2>
+      <div class="topic-grid">
+        <a href="#" class="topic-card locked">A2-01: Daily Activities 🔒</a>
+        <a href="#" class="topic-card locked">A2-02: Directions & Places 🔒</a>
+        <a href="#" class="topic-card locked">A2-03: Past Tense 🔒</a>
+      </div>
+    </section>
+
+    <!-- B1 Topics -->
+    <section>
+      <h2>B1 – Intermediate</h2>
+      <div class="topic-grid">
+        <a href="#" class="topic-card locked">B1-01: Giving Opinions 🔒</a>
+        <a href="#" class="topic-card locked">B1-02: Future Plans 🔒</a>
+      </div>
+    </section>
+
+    <!-- B2 Topics -->
+    <section>
+      <h2>B2 – Upper Intermediate</h2>
+      <div class="topic-grid">
+        <a href="#" class="topic-card locked">B2-01: Subjunctive Mood 🔒</a>
+        <a href="#" class="topic-card locked">B2-02: French Culture 🔒</a>
+      </div>
+    </section>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">🏠 Back to Home</a>
+
+  </div>
+</body>
+</html>
