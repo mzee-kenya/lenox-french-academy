@@ -3,87 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <title>Lenox French Academy | Learn French from A1 to B2</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <style>
-    /* Base styles */
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #fdfbfb, #ebedee);
-      color: #333;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #a8e063, #56ab2f);
+      color: #1e1e1e;
     }
 
     .container {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 50px auto;
+      background-color: #ffffffdd;
       padding: 30px;
-      background-color: white;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 1s ease-in-out;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      animation: popIn 0.6s ease-in-out;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      color: #003366;
+      font-size: 2.7rem;
+      color: #2e7d32;
       margin-bottom: 10px;
     }
 
     header p {
-      font-size: 1.2rem;
-      color: #555;
+      font-size: 1.1rem;
+      color: #444;
     }
 
     h2 {
-      color: #1a237e;
-      margin-top: 25px;
-      border-left: 5px solid #2196f3;
-      padding-left: 10px;
+      font-size: 1.5rem;
+      margin-top: 30px;
+      color: #2e7d32;
+      border-left: 6px solid #66bb6a;
+      padding-left: 12px;
     }
 
     .intro ul {
       padding-left: 20px;
-      line-height: 1.8;
       font-size: 1rem;
-      color: #444;
+      color: #333;
+      line-height: 1.8;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 20px;
-      margin: 10px 5px;
-      font-size: 16px;
-      font-weight: 600;
-      color: white;
-      background-color: #2196f3;
-      border: none;
-      border-radius: 10px;
+      margin: 12px 10px;
+      padding: 12px 25px;
+      background: #2e7d32;
+      color: #fff;
       text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     .btn:hover {
-      background-color: #0b7dda;
+      background: #388e3c;
       transform: scale(1.05);
     }
 
     footer {
-      margin-top: 40px;
       text-align: center;
+      margin-top: 40px;
       font-size: 0.9rem;
-      color: #888;
+      color: #666;
     }
 
     @media (max-width: 600px) {
@@ -104,28 +110,23 @@
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-
-    <!-- Header -->
     <header>
       <h1>🇫🇷 Lenox French Academy</h1>
-      <p>Master French step-by-step from Beginner (A1) to Advanced (B2)</p>
+      <p>Master French from A1 to B2 — Learn with Fun and Focus 🎓</p>
     </header>
 
-    <!-- Intro -->
     <section class="intro">
       <h2>📘 What You’ll Learn</h2>
       <ul>
         <li><strong>A1:</strong> Alphabet, Greetings, Introductions, Numbers…</li>
         <li><strong>A2:</strong> Places, Hobbies, Past Tense, Travel…</li>
         <li><strong>B1:</strong> Opinions, Future, Jobs, Media…</li>
-        <li><strong>B2:</strong> Subjunctive, Writing, Culture, Exam prep…</li>
+        <li><strong>B2:</strong> Subjunctive, Writing, Culture, Exam Prep…</li>
       </ul>
     </section>
 
-    <!-- Buttons -->
     <section class="actions">
       <h2>🚀 Ready to Begin?</h2>
       <a href="topics/a1-01-alphabet.html" class="btn">▶️ Start Learning</a>
@@ -134,11 +135,9 @@
       <a href="about.html" class="btn">ℹ️ About Us</a>
     </section>
 
-    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 Lenox French Academy | Learn French with Passion 🇫🇷</p>
+      <p>&copy; 2025 Lenox French Academy | Powered by Passion, Built with Purpose 💚</p>
     </footer>
-
   </div>
 </body>
-  </html>
+</html>
