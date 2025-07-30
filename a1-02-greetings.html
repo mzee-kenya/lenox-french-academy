@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>A1-02: Greetings | Lenox French Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #c2e59c, #64b3f4);
+      color: #1e1e1e;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #ffffffdd;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #2e7d32;
+    }
+
+    .greeting {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .speakBtn {
+      padding: 5px 10px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .speakBtn:hover {
+      background: #1b5e20;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin-top: 20px;
+      background-color: #2e7d32;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #1b5e20;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    #nextTopic {
+      display: none;
+      margin-top: 20px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .top-nav {
+      margin-bottom: 20px;
+    }
+
+    .top-nav a {
+      font-weight: bold;
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-nav">
+      <a href="topics.html">← Back to Topics</a>
+    </div>
+
+    <h1>A1-02: Les Salutations (Greetings)</h1>
+
+    <!-- Lesson Section -->
+    <div class="lesson">
+      <h2>📘 Common French Greetings</h2>
+      <div class="greeting"><strong>Bonjour</strong> – Hello / Good morning <button class="speakBtn" onclick="speak('Bonjour')">🔊</button></div>
+      <div class="greeting"><strong>Bonsoir</strong> – Good evening <button class="speakBtn" onclick="speak('Bonsoir')">🔊</button></div>
+      <div class="greeting"><strong>Salut</strong> – Hi <button class="speakBtn" onclick="speak('Salut')">🔊</button></div>
+      <div class="greeting"><strong>Ça va ?</strong> – How are you? <button class="speakBtn" onclick="speak('Ça va')">🔊</button></div>
+      <div class="greeting"><strong>Au revoir</strong> – Goodbye <button class="speakBtn" onclick="speak('Au revoir')">🔊</button></div>
+      <div class="greeting"><strong>Bonne nuit</strong> – Good night <button class="speakBtn" onclick="speak('Bonne nuit')">🔊</button></div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="quiz">
+      <h2>📝 Quiz: Greetings in French</h2>
+
+      <div class="question">
+        <p>1. What does "Bonjour" mean?</p>
+        <label><input type="radio" name="q1" value="correct"> Hello / Good morning</label>
+        <label><input type="radio" name="q1" value="wrong"> Good night</label>
+        <label><input type="radio" name="q1" value="wrong"> Goodbye</label>
+      </div>
+
+      <div class="question">
+        <p>2. How do you say "Hi" informally in French?</p>
+        <label><input type="radio" name="q2" value="correct"> Salut</label>
+        <label><input type="radio" name="q2" value="wrong"> Bonjour</label>
+        <label><input type="radio" name="q2" value="wrong"> Merci</label>
+      </div>
+
+      <div class="question">
+        <p>3. "Bonne nuit" means?</p>
+        <label><input type="radio" name="q3" value="correct"> Good night</label>
+        <label><input type="radio" name="q3" value="wrong"> Good day</label>
+        <label><input type="radio" name="q3" value="wrong"> See you</label>
+      </div>
+
+      <div class="question">
+        <p>4. How do you ask "How are you?" in French?</p>
+        <label><input type="radio" name="q4" value="correct"> Ça va ?</label>
+        <label><input type="radio" name="q4" value="wrong"> Comment ça ?</label>
+        <label><input type="radio" name="q4" value="wrong"> Qui est-ce ?</label>
+      </div>
+
+      <div class="question">
+        <p>5. What is "Au revoir" in English?</p>
+        <label><input type="radio" name="q5" value="correct"> Goodbye</label>
+        <label><input type="radio" name="q5" value="wrong"> Thank you</label>
+        <label><input type="radio" name="q5" value="wrong"> Good morning</label>
+      </div>
+
+      <button class="btn" onclick="checkQuiz()">Submit Answers</button>
+      <div class="result" id="result"></div>
+
+      <div id="nextTopic">
+        <a href="a1-03-introductions.html" class="btn">➡️ Continue to A1-03</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function speak(text) {
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "fr-FR";
+      speechSynthesis.speak(utter);
+    }
+
+    function checkQuiz() {
+      const answers = document.querySelectorAll('input[type="radio"]:checked');
+      let score = 0;
+
+      answers.forEach(ans => {
+        if (ans.value === "correct") score++;
+      });
+
+      const result = document.getElementById("result");
+      if (score >= 4) {
+        result.textContent = `🎉 Great! You scored ${score}/5. Topic A1-03 unlocked!`;
+        result.style.color = "green";
+        localStorage.setItem("a1-03-unlocked", "true");
+        document.getElementById("nextTopic").style.display = "block";
+      } else {
+        result.textContent = `❌ You scored ${score}/5. Please try again.`;
+        result.style.color = "red";
+        document.getElementById("nextTopic").style.display = "none";
+      }
+    }
+  </script>
+</body>
+        </html>
