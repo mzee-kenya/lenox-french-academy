@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>A1-03: Introductions | Lenox French Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(to right, #c2e59c, #64b3f4);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #1e1e1e;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      background: #ffffffdd;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      color: #2e7d32;
+    }
+    .sophie-container {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .sophie {
+      width: 200px;
+    }
+    .hand {
+      position: absolute;
+      top: 20px;
+      left: 140px;
+      width: 40px;
+      height: 40px;
+      background: #fddbb0;
+      border-radius: 50%;
+      animation: wave 2s infinite;
+      transform-origin: bottom center;
+    }
+    @keyframes wave {
+      0%, 100% { transform: rotate(0deg); }
+      20% { transform: rotate(20deg); }
+      40% { transform: rotate(-20deg); }
+      60% { transform: rotate(20deg); }
+      80% { transform: rotate(-10deg); }
+    }
+    .bubble {
+      background: #fff;
+      padding: 15px 20px;
+      margin-top: 10px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .speakBtn {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .speakBtn:hover {
+      background: #1b5e20;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+    .dialogue p {
+      background: #e8f5e9;
+      padding: 10px;
+      border-left: 5px solid #4caf50;
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .question {
+      margin-top: 20px;
+    }
+    .question label {
+      display: block;
+      margin: 5px 0;
+    }
+    .btn {
+      padding: 10px 20px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background: #1b5e20;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    #nextTopic {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sophie-container">
+      <img class="sophie" src="https://i.ibb.co/9HNzRkL/sophie-face.png" alt="Sophie the teacher">
+      <div class="hand"></div>
+      <div class="bubble">
+        Bonjour ! Je m'appelle Sophie. Aujourd’hui, nous allons apprendre à nous présenter en français.
+      </div>
+      <button class="speakBtn" onclick="speakSophie()">🔊 Écouter</button>
+    </div><h2>📘 Les Expressions de Présentation</h2>
+<table>
+  <tr><th>Français</th><th>Anglais</th></tr>
+  <tr><td>Je m'appelle Sophie.</td><td>My name is Sophie.</td></tr>
+  <tr><td>Tu t'appelles comment ?</td><td>What’s your name?</td></tr>
+  <tr><td>Il s'appelle Marc.</td><td>His name is Marc.</td></tr>
+  <tr><td>Elle s'appelle Léa.</td><td>Her name is Léa.</td></tr>
+  <tr><td>Moi, c’est Luc.</td><td>Me, I’m Luc.</td></tr>
+  <tr><td>Enchanté(e)</td><td>Nice to meet you</td></tr>
+</table>
+
+<h3>🧠 Astuce: "Je m'appelle" vs "Moi, c’est"</h3>
+<p><strong>"Je m'appelle"</strong> is more formal, while <strong>"Moi, c’est..."</strong> is casual.</p>
+
+<h2>🗣️ Dialogue: Marc, Léa et Luc</h2>
+<div class="dialogue">
+  <p><strong>Léa:</strong> Bonjour ! Tu es nouveau ici ? <button class="speakBtn" onclick="speak('Bonjour ! Tu es nouveau ici ?')">🔊</button></p>
+  <p><strong>Luc:</strong> Oui, je m'appelle Luc. Et toi ? <button class="speakBtn" onclick="speak('Oui, je m\'appelle Luc. Et toi ?')">🔊</button></p>
+  <p><strong>Léa:</strong> Moi, c’est Léa. Enchantée ! <button class="speakBtn" onclick="speak('Moi, c’est Léa. Enchantée !')">🔊</button></p>
+  <p><strong>Marc:</strong> Salut Luc ! Moi, c’est Marc. <button class="speakBtn" onclick="speak('Salut Luc ! Moi, c’est Marc.')">🔊</button></p>
+  <p><strong>Luc:</strong> Enchanté Marc. Vous êtes en quelle classe ? <button class="speakBtn" onclick="speak('Enchanté Marc. Vous êtes en quelle classe ?')">🔊</button></p>
+</div>
+
+<h2>📝 Quiz</h2>
+<div class="question">
+  <p>1. What does "Je m'appelle" mean?</p>
+  <label><input type="radio" name="q1" value="correct"> My name is...</label>
+  <label><input type="radio" name="q1" value="wrong"> How old are you?</label>
+  <label><input type="radio" name="q1" value="wrong"> Where are you from?</label>
+</div>
+<div class="question">
+  <p>2. How do you say "Nice to meet you" in French?</p>
+  <label><input type="radio" name="q2" value="correct"> Enchanté(e)</label>
+  <label><input type="radio" name="q2" value="wrong"> Merci</label>
+  <label><input type="radio" name="q2" value="wrong"> S'il vous plaît</label>
+</div>
+<div class="question">
+  <p>3. What does "Elle s'appelle Léa" mean?</p>
+  <label><input type="radio" name="q3" value="correct"> Her name is Léa</label>
+  <label><input type="radio" name="q3" value="wrong"> She’s my friend</label>
+  <label><input type="radio" name="q3" value="wrong"> She’s from Paris</label>
+</div>
+<div class="question">
+  <p>4. Which one is informal?</p>
+  <label><input type="radio" name="q4" value="correct"> Moi, c’est Luc</label>
+  <label><input type="radio" name="q4" value="wrong"> Je m'appelle Luc</label>
+  <label><input type="radio" name="q4" value="wrong"> Enchanté</label>
+</div>
+<div class="question">
+  <p>5. Translate "Tu t'appelles comment ?"</p>
+  <label><input type="radio" name="q5" value="correct"> What’s your name?</label>
+  <label><input type="radio" name="q5" value="wrong"> Where do you live?</label>
+  <label><input type="radio" name="q5" value="wrong"> What time is it?</label>
+</div>
+
+<button class="btn" onclick="checkQuiz()">Submit</button>
+<div class="result" id="result"></div>
+<div id="nextTopic">
+  <a class="btn" href="a1-04.html">➡️ Next: A1-04</a>
+</div>
+
+  </div>  <script>
+    function speakSophie() {
+      const text = "Bonjour ! Je m'appelle Sophie. Aujourd’hui, nous allons apprendre à nous présenter en français.";
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "fr-FR";
+      const voices = speechSynthesis.getVoices();
+      const voice = voices.find(v => v.lang === "fr-FR");
+      if (voice) utter.voice = voice;
+      speechSynthesis.speak(utter);
+    }
+
+    function speak(text) {
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "fr-FR";
+      speechSynthesis.speak(utter);
+    }
+
+    function checkQuiz() {
+      const answers = document.querySelectorAll('input[type="radio"]:checked');
+      let score = 0;
+      answers.forEach(ans => {
+        if (ans.value === "correct") score++;
+      });
+      const result = document.getElementById("result");
+      if (score >= 4) {
+        result.textContent = `🎉 Super ! Tu as obtenu ${score}/5. Le prochain sujet est débloqué !`;
+        result.style.color = "green";
+        localStorage.setItem("a1-04-unlocked", "true");
+        document.getElementById("nextTopic").style.display = "block";
+      } else {
+        result.textContent = `❌ Tu as obtenu ${score}/5. Réessaie !`;
+        result.style.color = "red";
+        document.getElementById("nextTopic").style.display = "none";
+      }
+    }
+  </script></body>
+</html>
