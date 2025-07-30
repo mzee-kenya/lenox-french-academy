@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>A1-05: Basic Verbs | Lenox French Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f1f8e9, #a5d6a7);
+      color: #1e1e1e;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #2e7d32;
+    }
+
+    .verb {
+      margin: 10px 0;
+      background: #e8f5e9;
+      padding: 12px 15px;
+      border-left: 5px solid #66bb6a;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .speakBtn {
+      background: #2e7d32;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .speakBtn:hover {
+      background: #1b5e20;
+    }
+
+    .dialogue, .quiz {
+      margin-top: 40px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #1b5e20;
+    }
+
+    #nextTopic {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .result {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 1.1em;
+    }
+
+    .animation-box {
+      margin-top: 30px;
+      background: #dcedc8;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+      color: #2e7d32;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../topics.html" class="back-link">← Back to Topics</a>
+    <h1>A1-05: Basic Verbs (Les Verbes de Base)</h1>
+
+    <h2>🚀 Most Common French Verbs</h2>
+    <div class="verb"><strong>Être</strong> – to be <button class="speakBtn" onclick="speak('être')">🔊</button></div>
+    <div class="verb"><strong>Avoir</strong> – to have <button class="speakBtn" onclick="speak('avoir')">🔊</button></div>
+    <div class="verb"><strong>Aller</strong> – to go <button class="speakBtn" onclick="speak('aller')">🔊</button></div>
+    <div class="verb"><strong>Faire</strong> – to do/make <button class="speakBtn" onclick="speak('faire')">🔊</button></div>
+    <div class="verb"><strong>Parler</strong> – to speak <button class="speakBtn" onclick="speak('parler')">🔊</button></div>
+    <div class="verb"><strong>Étudier</strong> – to study <button class="speakBtn" onclick="speak('étudier')">🔊</button></div>
+
+    <div class="animation-box">
+      <h2>🎬 Animated Introduction</h2>
+      <p><strong>Léna:</strong> Bonjour ! Je m'appelle Léna. J'ai 15 ans. Je suis étudiante. J'étudie le français. J'aime parler avec mes amis. Je vais à l'école chaque jour !</p>
+      <button class="speakBtn" onclick="speak(`Bonjour ! Je m'appelle Léna. J'ai 15 ans. Je suis étudiante. J'étudie le français. J'aime parler avec mes amis. Je vais à l'école chaque jour !`)">🔊 Écouter</button>
+    </div>
+
+    <div class="dialogue">
+      <h2>🗣️ Example Sentences</h2>
+      <div class="verb"><strong>Je suis étudiant.</strong> – I am a student <button class="speakBtn" onclick="speak('Je suis étudiant')">🔊</button></div>
+      <div class="verb"><strong>Tu as un livre.</strong> – You have a book <button class="speakBtn" onclick="speak('Tu as un livre')">🔊</button></div>
+      <div class="verb"><strong>Nous allons à l'école.</strong> – We go to school <button class="speakBtn" onclick="speak('Nous allons à l\'école')">🔊</button></div>
+    </div>
+
+    <div class="quiz">
+      <h2>📝 Quiz: Basic Verbs</h2>
+
+      <div class="question">
+        <p>1. What does "être" mean?</p>
+        <label><input type="radio" name="q1" value="correct"> To be</label>
+        <label><input type="radio" name="q1" value="wrong"> To go</label>
+        <label><input type="radio" name="q1" value="wrong"> To speak</label>
+      </div>
+
+      <div class="question">
+        <p>2. "Aller" means?</p>
+        <label><input type="radio" name="q2" value="correct"> To go</label>
+        <label><input type="radio" name="q2" value="wrong"> To have</label>
+        <label><input type="radio" name="q2" value="wrong"> To do</label>
+      </div>
+
+      <div class="question">
+        <p>3. "Parler" means?</p>
+        <label><input type="radio" name="q3" value="correct"> To speak</label>
+        <label><input type="radio" name="q3" value="wrong"> To study</label>
+        <label><input type="radio" name="q3" value="wrong"> To be</label>
+      </div>
+
+      <div class="question">
+        <p>4. "Faire" means?</p>
+        <label><input type="radio" name="q4" value="correct"> To do / make</label>
+        <label><input type="radio" name="q4" value="wrong"> To have</label>
+        <label><input type="radio" name="q4" value="wrong"> To be</label>
+      </div>
+
+      <div class="question">
+        <p>5. "Étudier" means?</p>
+        <label><input type="radio" name="q5" value="correct"> To study</label>
+        <label><input type="radio" name="q5" value="wrong"> To go</label>
+        <label><input type="radio" name="q5" value="wrong"> To make</label>
+      </div>
+
+      <button class="btn" onclick="checkQuiz()">Submit Answers</button>
+      <div class="result" id="result"></div>
+
+      <div id="nextTopic">
+        <a href="a1-06-simple-phrases.html" class="btn">➡️ Continue to A1-06</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function speak(text) {
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "fr-FR";
+      speechSynthesis.speak(utter);
+    }
+
+    function checkQuiz() {
+      const answers = document.querySelectorAll('input[type="radio"]:checked');
+      let score = 0;
+
+      answers.forEach(ans => {
+        if (ans.value === "correct") score++;
+      });
+
+      const result = document.getElementById("result");
+      if (score >= 4) {
+        result.textContent = `🎉 Excellent! You scored ${score}/5. Topic A1-06 unlocked!`;
+        result.style.color = "green";
+        localStorage.setItem("a1-06-unlocked", "true");
+        document.getElementById("nextTopic").style.display = "block";
+      } else {
+        result.textContent = `❌ You scored ${score}/5. Try again to unlock the next topic.`;
+        result.style.color = "red";
+        document.getElementById("nextTopic").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
