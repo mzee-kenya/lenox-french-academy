@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>A1-04: Numbers | Lenox French Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #ffffffee;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #2e7d32;
+      text-align: center;
+    }
+
+    .number-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .number-card {
+      background: #e8f5e9;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      border-left: 5px solid #4caf50;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .number-card:hover {
+      background: #c8e6c9;
+      transform: scale(1.05);
+    }
+
+    .repeat-section {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #2e7d32;
+    }
+
+    .repeat-line {
+      margin: 10px 0;
+      padding: 10px 15px;
+      background: #e0f7fa;
+      border-left: 5px solid #009688;
+      border-radius: 8px;
+    }
+
+    .speakBtn {
+      padding: 5px 10px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .speakBtn:hover {
+      background: #1b5e20;
+    }
+
+    .quiz {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #2e7d32;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin-top: 20px;
+      background-color: #2e7d32;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #1b5e20;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    #nextTopic {
+      display: none;
+      margin-top: 20px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 25px;
+      background: #2e7d32;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .number-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>A1-04: Les Nombres (Numbers)</h1>
+
+    <p>🔊 Click on any number to hear it pronounced in French.</p>
+
+    <!-- Number Grid -->
+    <div class="number-grid">
+      <div class="number-card" onclick="speak('un')">1 - un</div>
+      <div class="number-card" onclick="speak('deux')">2 - deux</div>
+      <div class="number-card" onclick="speak('trois')">3 - trois</div>
+      <div class="number-card" onclick="speak('quatre')">4 - quatre</div>
+      <div class="number-card" onclick="speak('cinq')">5 - cinq</div>
+      <div class="number-card" onclick="speak('six')">6 - six</div>
+      <div class="number-card" onclick="speak('sept')">7 - sept</div>
+      <div class="number-card" onclick="speak('huit')">8 - huit</div>
+      <div class="number-card" onclick="speak('neuf')">9 - neuf</div>
+      <div class="number-card" onclick="speak('dix')">10 - dix</div>
+      <div class="number-card" onclick="speak('onze')">11 - onze</div>
+      <div class="number-card" onclick="speak('douze')">12 - douze</div>
+      <div class="number-card" onclick="speak('treize')">13 - treize</div>
+      <div class="number-card" onclick="speak('quatorze')">14 - quatorze</div>
+      <div class="number-card" onclick="speak('quinze')">15 - quinze</div>
+      <div class="number-card" onclick="speak('seize')">16 - seize</div>
+      <div class="number-card" onclick="speak('dix-sept')">17 - dix-sept</div>
+      <div class="number-card" onclick="speak('dix-huit')">18 - dix-huit</div>
+      <div class="number-card" onclick="speak('dix-neuf')">19 - dix-neuf</div>
+      <div class="number-card" onclick="speak('vingt')">20 - vingt</div>
+    </div>
+
+    <!-- Practice Section -->
+    <div class="repeat-section">
+      <h2>🎤 Repeat After Me</h2>
+      <div class="repeat-line">Je compte de un à cinq. <button class="speakBtn" onclick="speak('Je compte de un à cinq.')">🔊</button></div>
+      <div class="repeat-line">Un, deux, trois, quatre, cinq. <button class="speakBtn" onclick="speak('Un, deux, trois, quatre, cinq.')">🔊</button></div>
+      <div class="repeat-line">Les nombres sont importants. <button class="speakBtn" onclick="speak('Les nombres sont importants.')">🔊</button></div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="quiz">
+      <h2>📝 Quiz: Numbers in French</h2>
+
+      <div class="question">
+        <p>1. What is “seven” in French?</p>
+        <label><input type="radio" name="q1" value="correct"> sept</label>
+        <label><input type="radio" name="q1" value="wrong"> cinq</label>
+        <label><input type="radio" name="q1" value="wrong"> neuf</label>
+      </div>
+
+      <div class="question">
+        <p>2. Translate “quatorze”.</p>
+        <label><input type="radio" name="q2" value="correct"> 14</label>
+        <label><input type="radio" name="q2" value="wrong"> 12</label>
+        <label><input type="radio" name="q2" value="wrong"> 11</label>
+      </div>
+
+      <div class="question">
+        <p>3. Which of these is “three” in French?</p>
+        <label><input type="radio" name="q3" value="correct"> trois</label>
+        <label><input type="radio" name="q3" value="wrong"> douze</label>
+        <label><input type="radio" name="q3" value="wrong"> deux</label>
+      </div>
+
+      <div class="question">
+        <p>4. “Dix-neuf” is:</p>
+        <label><input type="radio" name="q4" value="correct"> 19</label>
+        <label><input type="radio" name="q4" value="wrong"> 10</label>
+        <label><input type="radio" name="q4" value="wrong"> 9</label>
+      </div>
+
+      <div class="question">
+        <p>5. What is the French word for 20?</p>
+        <label><input type="radio" name="q5" value="correct"> vingt</label>
+        <label><input type="radio" name="q5" value="wrong"> dix</label>
+        <label><input type="radio" name="q5" value="wrong"> quinze</label>
+      </div>
+
+      <button class="btn" onclick="checkQuiz()">Submit Answers</button>
+      <div class="result" id="result"></div>
+
+      <div id="nextTopic">
+        <a href="a1-05-basic-verbs.html" class="btn">➡️ Continue to A1-05</a>
+      </div>
+    </div>
+
+    <!-- Back to Topics -->
+    <a href="topics.html" class="back">← Back to Topics</a>
+  </div>
+
+  <script>
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "fr-FR";
+      speechSynthesis.speak(utterance);
+    }
+
+    function checkQuiz() {
+      const answers = document.querySelectorAll('input[type="radio"]:checked');
+      let score = 0;
+
+      answers.forEach(ans => {
+        if (ans.value === "correct") score++;
+      });
+
+      const result = document.getElementById("result");
+      if (score >= 4) {
+        result.textContent = `🎉 Great! You scored ${score}/5. Topic A1-05 unlocked!`;
+        result.style.color = "green";
+        localStorage.setItem("a1-05-unlocked", "true");
+        document.getElementById("nextTopic").style.display = "block";
+      } else {
+        result.textContent = `❌ You scored ${score}/5. Please try again.`;
+        result.style.color = "red";
+        document.getElementById("nextTopic").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
