@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>A1-01: Alphabet | Lenox French Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #a8e063, #56ab2f);
+      color: #1e1e1e;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #ffffffdd;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #2e7d32;
+    }
+
+    .lesson {
+      margin-bottom: 30px;
+    }
+
+    .alphabet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .alphabet button {
+      padding: 10px 14px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .alphabet button:hover {
+      background: #1b5e20;
+      transform: scale(1.05);
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin-top: 20px;
+      background-color: #2e7d32;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #1b5e20;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    #nextTopic {
+      display: none;
+      margin-top: 20px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>A1-01: The French Alphabet</h1>
+
+    <!-- Lesson Section -->
+    <div class="lesson">
+      <h2>📘 Lesson Summary</h2>
+      <p>The French alphabet contains the same 26 letters as English, but they are pronounced differently.</p>
+      <p><strong>Click the letters below to hear them spoken in French:</strong></p>
+
+      <div class="alphabet">
+        <button onclick="speakLetter('A')">A</button>
+        <button onclick="speakLetter('B')">B</button>
+        <button onclick="speakLetter('C')">C</button>
+        <button onclick="speakLetter('D')">D</button>
+        <button onclick="speakLetter('E')">E</button>
+        <button onclick="speakLetter('F')">F</button>
+        <button onclick="speakLetter('G')">G</button>
+        <button onclick="speakLetter('H')">H</button>
+        <button onclick="speakLetter('I')">I</button>
+        <button onclick="speakLetter('J')">J</button>
+        <button onclick="speakLetter('K')">K</button>
+        <button onclick="speakLetter('L')">L</button>
+        <button onclick="speakLetter('M')">M</button>
+        <button onclick="speakLetter('N')">N</button>
+        <button onclick="speakLetter('O')">O</button>
+        <button onclick="speakLetter('P')">P</button>
+        <button onclick="speakLetter('Q')">Q</button>
+        <button onclick="speakLetter('R')">R</button>
+        <button onclick="speakLetter('S')">S</button>
+        <button onclick="speakLetter('T')">T</button>
+        <button onclick="speakLetter('U')">U</button>
+        <button onclick="speakLetter('V')">V</button>
+        <button onclick="speakLetter('W')">W</button>
+        <button onclick="speakLetter('X')">X</button>
+        <button onclick="speakLetter('Y')">Y</button>
+        <button onclick="speakLetter('Z')">Z</button>
+      </div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="quiz">
+      <h2>📝 Quiz: French Alphabet</h2>
+
+      <div class="question">
+        <p>1. What is the French pronunciation of the letter “J”?</p>
+        <label><input type="radio" name="q1" value="correct"> Zhee</label>
+        <label><input type="radio" name="q1" value="wrong"> Jay</label>
+        <label><input type="radio" name="q1" value="wrong"> Jee</label>
+      </div>
+
+      <div class="question">
+        <p>2. How do you pronounce “E” in French?</p>
+        <label><input type="radio" name="q2" value="correct"> Uh</label>
+        <label><input type="radio" name="q2" value="wrong"> Ee</label>
+        <label><input type="radio" name="q2" value="wrong"> Ay</label>
+      </div>
+
+      <div class="question">
+        <p>3. Which letter sounds like “ah”?</p>
+        <label><input type="radio" name="q3" value="correct"> A</label>
+        <label><input type="radio" name="q3" value="wrong"> E</label>
+        <label><input type="radio" name="q3" value="wrong"> O</label>
+      </div>
+
+      <div class="question">
+        <p>4. Which letter is pronounced “zhee”?</p>
+        <label><input type="radio" name="q4" value="correct"> J</label>
+        <label><input type="radio" name="q4" value="wrong"> G</label>
+        <label><input type="radio" name="q4" value="wrong"> Z</label>
+      </div>
+
+      <div class="question">
+        <p>5. How many letters are in the French alphabet?</p>
+        <label><input type="radio" name="q5" value="correct"> 26</label>
+        <label><input type="radio" name="q5" value="wrong"> 24</label>
+        <label><input type="radio" name="q5" value="wrong"> 28</label>
+      </div>
+
+      <button class="btn" onclick="checkQuiz()">Submit Answers</button>
+      <div class="result" id="result"></div>
+
+      <div id="nextTopic">
+        <a href="a1-02-greetings.html" class="btn">➡️ Continue to A1-02</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function speakLetter(letter) {
+      const utter = new SpeechSynthesisUtterance(letter);
+      utter.lang = "fr-FR"; // French voice
+      speechSynthesis.speak(utter);
+    }
+
+    function checkQuiz() {
+      const answers = document.querySelectorAll('input[type="radio"]:checked');
+      let score = 0;
+
+      answers.forEach(ans => {
+        if (ans.value === "correct") score++;
+      });
+
+      const result = document.getElementById("result");
+      if (score >= 4) {
+        result.textContent = `🎉 Great job! You scored ${score}/5. Next topic unlocked!`;
+        result.style.color = "green";
+        localStorage.setItem("a1-02-unlocked", "true");
+        document.getElementById("nextTopic").style.display = "block";
+      } else {
+        result.textContent = `❌ You scored ${score}/5. Try again to unlock the next topic.`;
+        result.style.color = "red";
+        document.getElementById("nextTopic").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
