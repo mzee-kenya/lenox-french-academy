@@ -6,180 +6,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #f1f8e9, #a5d6a7);
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0f9e8, #a8e063);
       color: #1e1e1e;
     }
 
     .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #fff;
+      max-width: 1000px;
+      margin: 50px auto;
       padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      background-color: #ffffffdd;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       color: #2e7d32;
     }
 
-    .verb {
-      margin: 10px 0;
-      background: #e8f5e9;
-      padding: 12px 15px;
-      border-left: 5px solid #66bb6a;
-      border-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
     .speakBtn {
+      padding: 5px 10px;
       background: #2e7d32;
       color: white;
       border: none;
-      padding: 6px 12px;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
+      margin-left: 10px;
     }
 
     .speakBtn:hover {
       background: #1b5e20;
     }
 
-    .dialogue, .quiz {
-      margin-top: 40px;
+    .verb-section {
+      margin-bottom: 50px;
     }
 
-    .question {
-      margin-bottom: 20px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
     }
 
-    .question label {
-      display: block;
-      margin: 5px 0;
+    td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #c8e6c9;
+    }
+
+    p {
+      margin: 6px 0;
+    }
+
+    .example {
+      margin-top: 10px;
+      padding: 10px;
+      background: #f1f8e9;
+      border-left: 5px solid #66bb6a;
+      border-radius: 6px;
     }
 
     .btn {
-      margin-top: 20px;
-      padding: 10px 20px;
+      margin-top: 30px;
+      display: inline-block;
+      padding: 12px 20px;
       background: #2e7d32;
       color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
     }
 
     .btn:hover {
       background: #1b5e20;
     }
-
-    #nextTopic {
-      display: none;
-      margin-top: 20px;
-    }
-
-    .result {
-      font-weight: bold;
-      margin-top: 20px;
-      font-size: 1.1em;
-    }
-
-    .animation-box {
-      margin-top: 30px;
-      background: #dcedc8;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 40px;
-      color: #2e7d32;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <a href="../topics.html" class="back-link">← Back to Topics</a>
-    <h1>A1-05: Basic Verbs (Les Verbes de Base)</h1>
+    <a href="topics.html" class="btn">← Back to Topics</a>
+    <h1>A1-05: Basic Verbs</h1>
+    <p>This lesson introduces essential French verbs used in daily life, their conjugations, and how to apply them both directly and indirectly.</p>
 
-    <h2>🚀 Most Common French Verbs</h2>
-    <div class="verb"><strong>Être</strong> – to be <button class="speakBtn" onclick="speak('être')">🔊</button></div>
-    <div class="verb"><strong>Avoir</strong> – to have <button class="speakBtn" onclick="speak('avoir')">🔊</button></div>
-    <div class="verb"><strong>Aller</strong> – to go <button class="speakBtn" onclick="speak('aller')">🔊</button></div>
-    <div class="verb"><strong>Faire</strong> – to do/make <button class="speakBtn" onclick="speak('faire')">🔊</button></div>
-    <div class="verb"><strong>Parler</strong> – to speak <button class="speakBtn" onclick="speak('parler')">🔊</button></div>
-    <div class="verb"><strong>Étudier</strong> – to study <button class="speakBtn" onclick="speak('étudier')">🔊</button></div>
-
-    <div class="animation-box">
-      <h2>🎬 Animated Introduction</h2>
-      <p><strong>Léna:</strong> Bonjour ! Je m'appelle Léna. J'ai 15 ans. Je suis étudiante. J'étudie le français. J'aime parler avec mes amis. Je vais à l'école chaque jour !</p>
-      <button class="speakBtn" onclick="speak(`Bonjour ! Je m'appelle Léna. J'ai 15 ans. Je suis étudiante. J'étudie le français. J'aime parler avec mes amis. Je vais à l'école chaque jour !`)">🔊 Écouter</button>
+    <!-- Être -->
+    <div class="verb-section">
+      <h2>Être – To be <button class="speakBtn" onclick="speak('Être')">🔊</button></h2>
+      <table>
+        <tr><td>Je suis</td><td>I am</td></tr>
+        <tr><td>Tu es</td><td>You are</td></tr>
+        <tr><td>Il/Elle est</td><td>He/She is</td></tr>
+        <tr><td>Nous sommes</td><td>We are</td></tr>
+        <tr><td>Vous êtes</td><td>You are (formal/plural)</td></tr>
+        <tr><td>Ils/Elles sont</td><td>They are</td></tr>
+      </table>
+      <div class="example"><strong>Il est étudiant.</strong> (He is a student) <button class="speakBtn" onclick="speak('Il est étudiant')">🔊</button></div>
     </div>
 
-    <div class="dialogue">
-      <h2>🗣️ Example Sentences</h2>
-      <div class="verb"><strong>Je suis étudiant.</strong> – I am a student <button class="speakBtn" onclick="speak('Je suis étudiant')">🔊</button></div>
-      <div class="verb"><strong>Tu as un livre.</strong> – You have a book <button class="speakBtn" onclick="speak('Tu as un livre')">🔊</button></div>
-      <div class="verb"><strong>Nous allons à l'école.</strong> – We go to school <button class="speakBtn" onclick="speak('Nous allons à l\'école')">🔊</button></div>
+    <!-- Avoir -->
+    <div class="verb-section">
+      <h2>Avoir – To have <button class="speakBtn" onclick="speak('Avoir')">🔊</button></h2>
+      <table>
+        <tr><td>J’ai</td><td>I have</td></tr>
+        <tr><td>Tu as</td><td>You have</td></tr>
+        <tr><td>Il/Elle a</td><td>He/She has</td></tr>
+        <tr><td>Nous avons</td><td>We have</td></tr>
+        <tr><td>Vous avez</td><td>You have</td></tr>
+        <tr><td>Ils/Elles ont</td><td>They have</td></tr>
+      </table>
+      <div class="example"><strong>Elle a une voiture.</strong> (She has a car) <button class="speakBtn" onclick="speak('Elle a une voiture')">🔊</button></div>
+      <div class="example"><strong>Il a besoin d’aide.</strong> (He needs help) <button class="speakBtn" onclick="speak('Il a besoin d’aide')">🔊</button></div>
     </div>
 
-    <div class="quiz">
-      <h2>📝 Quiz: Basic Verbs</h2>
-
-      <div class="question">
-        <p>1. What does "être" mean?</p>
-        <label><input type="radio" name="q1" value="correct"> To be</label>
-        <label><input type="radio" name="q1" value="wrong"> To go</label>
-        <label><input type="radio" name="q1" value="wrong"> To speak</label>
-      </div>
-
-      <div class="question">
-        <p>2. "Aller" means?</p>
-        <label><input type="radio" name="q2" value="correct"> To go</label>
-        <label><input type="radio" name="q2" value="wrong"> To have</label>
-        <label><input type="radio" name="q2" value="wrong"> To do</label>
-      </div>
-
-      <div class="question">
-        <p>3. "Parler" means?</p>
-        <label><input type="radio" name="q3" value="correct"> To speak</label>
-        <label><input type="radio" name="q3" value="wrong"> To study</label>
-        <label><input type="radio" name="q3" value="wrong"> To be</label>
-      </div>
-
-      <div class="question">
-        <p>4. "Faire" means?</p>
-        <label><input type="radio" name="q4" value="correct"> To do / make</label>
-        <label><input type="radio" name="q4" value="wrong"> To have</label>
-        <label><input type="radio" name="q4" value="wrong"> To be</label>
-      </div>
-
-      <div class="question">
-        <p>5. "Étudier" means?</p>
-        <label><input type="radio" name="q5" value="correct"> To study</label>
-        <label><input type="radio" name="q5" value="wrong"> To go</label>
-        <label><input type="radio" name="q5" value="wrong"> To make</label>
-      </div>
-
-      <button class="btn" onclick="checkQuiz()">Submit Answers</button>
-      <div class="result" id="result"></div>
-
-      <div id="nextTopic">
-        <a href="a1-06-simple-phrases.html" class="btn">➡️ Continue to A1-06</a>
-      </div>
+    <!-- Aller -->
+    <div class="verb-section">
+      <h2>Aller – To go <button class="speakBtn" onclick="speak('Aller')">🔊</button></h2>
+      <table>
+        <tr><td>Je vais</td><td>I go</td></tr>
+        <tr><td>Tu vas</td><td>You go</td></tr>
+        <tr><td>Il/Elle va</td><td>He/She goes</td></tr>
+        <tr><td>Nous allons</td><td>We go</td></tr>
+        <tr><td>Vous allez</td><td>You go</td></tr>
+        <tr><td>Ils/Elles vont</td><td>They go</td></tr>
+      </table>
+      <div class="example"><strong>Je vais à la maison.</strong> (I’m going home) <button class="speakBtn" onclick="speak('Je vais à la maison')">🔊</button></div>
     </div>
+
+    <!-- Faire -->
+    <div class="verb-section">
+      <h2>Faire – To do / To make <button class="speakBtn" onclick="speak('Faire')">🔊</button></h2>
+      <table>
+        <tr><td>Je fais</td><td>I do</td></tr>
+        <tr><td>Tu fais</td><td>You do</td></tr>
+        <tr><td>Il/Elle fait</td><td>He/She does</td></tr>
+        <tr><td>Nous faisons</td><td>We do</td></tr>
+        <tr><td>Vous faites</td><td>You do</td></tr>
+        <tr><td>Ils/Elles font</td><td>They do</td></tr>
+      </table>
+      <div class="example"><strong>Elle fait du sport.</strong> (She does sports) <button class="speakBtn" onclick="speak('Elle fait du sport')">🔊</button></div>
+      <div class="example"><strong>Je fais attention à toi.</strong> (I pay attention to you) <button class="speakBtn" onclick="speak('Je fais attention à toi')">🔊</button></div>
+    </div>
+
+    <!-- Parler -->
+    <div class="verb-section">
+      <h2>Parler – To speak <button class="speakBtn" onclick="speak('Parler')">🔊</button></h2>
+      <table>
+        <tr><td>Je parle</td><td>I speak</td></tr>
+        <tr><td>Tu parles</td><td>You speak</td></tr>
+        <tr><td>Il/Elle parle</td><td>He/She speaks</td></tr>
+        <tr><td>Nous parlons</td><td>We speak</td></tr>
+        <tr><td>Vous parlez</td><td>You speak</td></tr>
+        <tr><td>Ils/Elles parlent</td><td>They speak</td></tr>
+      </table>
+      <div class="example"><strong>Tu parles français ?</strong> (Do you speak French?) <button class="speakBtn" onclick="speak('Tu parles français ?')">🔊</button></div>
+    </div>
+
+    <a href="a1-06-common-phrases.html" class="btn">➡️ Next: A1-06 Common Phrases</a>
   </div>
 
   <script>
@@ -187,27 +169,6 @@
       const utter = new SpeechSynthesisUtterance(text);
       utter.lang = "fr-FR";
       speechSynthesis.speak(utter);
-    }
-
-    function checkQuiz() {
-      const answers = document.querySelectorAll('input[type="radio"]:checked');
-      let score = 0;
-
-      answers.forEach(ans => {
-        if (ans.value === "correct") score++;
-      });
-
-      const result = document.getElementById("result");
-      if (score >= 4) {
-        result.textContent = `🎉 Excellent! You scored ${score}/5. Topic A1-06 unlocked!`;
-        result.style.color = "green";
-        localStorage.setItem("a1-06-unlocked", "true");
-        document.getElementById("nextTopic").style.display = "block";
-      } else {
-        result.textContent = `❌ You scored ${score}/5. Try again to unlock the next topic.`;
-        result.style.color = "red";
-        document.getElementById("nextTopic").style.display = "none";
-      }
     }
   </script>
 </body>
