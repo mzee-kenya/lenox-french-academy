@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A2-01: Daily Activities | Lenox French Academy</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f1f8e9;
+      color: #333;
+      padding: 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      color: #2e7d32;
+    }
+    .vocab-table, .quiz-section {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      margin-bottom: 30px;
+    }
+    .vocab-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .vocab-table th, .vocab-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    .quiz-section label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .speakBtn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .next-btn {
+      display: none;
+      background: #388e3c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>A2-01: Daily Activities</h1>
+
+  <section class="vocab-table">
+    <h2>📚 Vocabulary</h2>
+    <table>
+      <tr><th>French</th><th>English</th></tr>
+      <tr><td>Se réveiller</td><td>To wake up</td></tr>
+      <tr><td>Se lever</td><td>To get up</td></tr>
+      <tr><td>Se laver / prendre une douche</td><td>To wash / take a shower</td></tr>
+      <tr><td>S'habiller</td><td>To get dressed</td></tr>
+      <tr><td>Se brosser les dents</td><td>To brush teeth</td></tr>
+      <tr><td>Prendre le petit déjeuner</td><td>To have breakfast</td></tr>
+      <tr><td>Aller à l'école / au travail</td><td>To go to school / work</td></tr>
+      <tr><td>Étudier / Travailler</td><td>To study / work</td></tr>
+      <tr><td>Déjeuner</td><td>To eat lunch</td></tr>
+      <tr><td>Se reposer</td><td>To rest</td></tr>
+      <tr><td>Dîner</td><td>To have dinner</td></tr>
+      <tr><td>Se coucher</td><td>To go to bed</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>🧠 Reflexive Verb Example</h2>
+    <p><strong>Se lever</strong> (to get up) – Présent:</p>
+    <ul>
+      <li>Je <strong>me lève</strong></li>
+      <li>Tu <strong>te lèves</strong></li>
+      <li>Il/Elle <strong>se lève</strong></li>
+      <li>Nous <strong>nous levons</strong></li>
+      <li>Vous <strong>vous levez</strong></li>
+      <li>Ils/Elles <strong>se lèvent</strong></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📆 Sample Daily Routine</h2>
+    <p>D'abord, je me réveille à 6h30 <button class="speakBtn" onclick="speak('Je me réveille à six heures trente.')">🔊</button>. Ensuite, je me douche, je m'habille et je prends mon petit déjeuner <button class="speakBtn" onclick="speak('Je prends mon petit déjeuner.')">🔊</button>. Je vais à l'école à 7h30. Après les cours, je rentre à la maison, je fais mes devoirs, puis je dîne. Enfin, je me couche vers 22h <button class="speakBtn" onclick="speak('Je me couche à vingt-deux heures.')">🔊</button>.</p>
+  </section>
+
+  <section>
+    <h2>💬 Dialogue Example</h2>
+    <p><strong>Marc:</strong> Tu fais quoi le matin ? <button class="speakBtn" onclick="speak('Tu fais quoi le matin ?')">🔊</button></p>
+    <p><strong>Léa:</strong> Je me réveille à 6h30, puis je me prépare pour aller au travail. <button class="speakBtn" onclick="speak('Je me réveille à six heures trente.')">🔊</button></p>
+    <p><strong>Marc:</strong> Tu prends le petit déjeuner ? <button class="speakBtn" onclick="speak('Tu prends le petit déjeuner ?')">🔊</button></p>
+    <p><strong>Léa:</strong> Oui, je mange une tartine avec du café. Et toi ? <button class="speakBtn" onclick="speak('Oui, je mange une tartine avec du café.')">🔊</button></p>
+  </section>
+
+  <section class="quiz-section">
+    <h2>📝 Quiz (10 Questions)</h2>
+    <form id="quizForm">
+      <p>1. Que veut dire "se réveiller" ?</p>
+      <label><input type="radio" name="q1" value="correct">To wake up</label>
+      <label><input type="radio" name="q1" value="wrong">To get dressed</label>
+      <label><input type="radio" name="q1" value="wrong">To brush teeth</label>
+
+      <p>2. "Je me lève" signifie:</p>
+      <label><input type="radio" name="q2" value="correct">I get up</label>
+      <label><input type="radio" name="q2" value="wrong">I eat</label>
+
+      <p>3. Quel mot signifie "to have dinner" ?</p>
+      <label><input type="radio" name="q3" value="correct">Dîner</label>
+      <label><input type="radio" name="q3" value="wrong">Déjeuner</label>
+
+      <p>4. Quelle est l'heure: 22h ?</p>
+      <label><input type="radio" name="q4" value="correct">10 PM</label>
+      <label><input type="radio" name="q4" value="wrong">8 PM</label>
+
+      <p>5. Quel verbe est pronominal ?</p>
+      <label><input type="radio" name="q5" value="correct">Se laver</label>
+      <label><input type="radio" name="q5" value="wrong">Aller</label>
+
+      <p>6. Traduisez: "I brush my teeth"</p>
+      <label><input type="radio" name="q6" value="correct">Je me brosse les dents</label>
+      <label><input type="radio" name="q6" value="wrong">Je brosse mes dents</label>
+
+      <p>7. Quel mot est un connecteur ?</p>
+      <label><input type="radio" name="q7" value="correct">Ensuite</label>
+      <label><input type="radio" name="q7" value="wrong">Toilette</label>
+
+      <p>8. Quelle phrase est correcte au passé composé ?</p>
+      <label><input type="radio" name="q8" value="correct">Elle s’est réveillée</label>
+      <label><input type="radio" name="q8" value="wrong">Elle s’a réveillée</label>
+
+      <p>9. Comment dit-on "I return home" ?</p>
+      <label><input type="radio" name="q9" value="correct">Je rentre à la maison</label>
+      <label><input type="radio" name="q9" value="wrong">Je retourne chez</label>
+
+      <p>10. Vrai ou Faux: "Dîner" signifie "Lunch"</p>
+      <label><input type="radio" name="q10" value="correct">Faux</label>
+      <label><input type="radio" name="q10" value="wrong">Vrai</label>
+
+      <button type="button" onclick="checkQuiz()">✅ Submit Quiz</button>
+    </form>
+    <button id="nextTopic" class="next-btn" onclick="window.location.href='a2-02-directions.html'">Next Topic ➡️</button>
+  </section>
+
+  <script>
+    function speak(text) {
+      const synth = window.speechSynthesis;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'fr-FR';
+      synth.speak(utterance);
+    }
+
+    function checkQuiz() {
+      const correctAnswers = document.querySelectorAll('input[value="correct"]:checked').length;
+      if (correctAnswers >= 8) {
+        alert("👏 Félicitations ! Vous avez réussi le quiz.");
+        localStorage.setItem("a2-02-unlocked", "true");
+        document.getElementById("nextTopic").style.display = "inline-block";
+      } else {
+        alert("❌ Essayez encore. Vous avez besoin de 8 bonnes réponses.");
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+✅ The full HTML file for A2-01: Daily Activities has been generated successfully and saved.
+
+It includes:
+
+Rich vocabulary 📚
+
+Grammar with reflexive verbs 🧠
+
+Sample routine 📆
+
+Dialogue 💬
+
+10-question interactive quiz 📝
+
+Text-to-speech for pronunciation 🔊
+
+Unlock logic for the next topic ✅
+
+
+If you’d like to continue with A2-02: Directions & Places, just say “Next” and I’ll build it smartly like this one.
+
