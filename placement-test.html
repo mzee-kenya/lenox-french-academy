@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!--
+  File: placement-test.html
+  Purpose: Lightweight placement test that suggests a starting level
+  and unlocks topics based on performance (uses localStorage for demo).
+  Presentation notes: Results display suggested level and set unlock keys.
+-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Placement Test | Lenox French Academy</title>
+  <style>
+    body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#f4f8ff,#eef7ff);margin:0;color:#1e1e1e}
+    .container{max-width:900px;margin:40px auto;background:#fff;padding:26px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+    h1{color:#2e7d32}
+    .question{margin:14px 0}
+    .btn{display:inline-block;padding:10px 14px;background:#2e7d32;color:#fff;border-radius:8px;border:none;cursor:pointer}
+    .result{margin-top:16px;font-weight:700}
+    .note{font-size:0.95rem;color:#444}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html">← Back to Home</a>
+    <h1>Placement Test</h1>
+    <p class="note">This short adaptive-style test estimates a suggested CEFR level. Answers are stored locally for demo unlocking only.</p>
+
+    <!-- Questions (mix of A1-A2-B1 basics) -->
+    <div id="quiz">
+      <div class="question">
+        <p>1. What does "Bonjour" mean?</p>
+        <label><input type="radio" name="q1" value="1"> Hello / Good morning</label><br>
+        <label><input type="radio" name="q1" value="0"> Goodbye</label>
+      </div>
+
+      <div class="question">
+        <p>2. How do you say "I have"?</p>
+        <label><input type="radio" name="q2" value="1"> J'ai</label><br>
+        <label><input type="radio" name="q2" value="0"> Je suis</label>
+      </div>
+
+      <div class="question">
+        <p>3. "Je vais manger" is which tense?</p>
+        <label><input type="radio" name="q3" value="1"> Near future (futur proche)</label><br>
+        <label><input type="radio" name="q3" value="0"> Past</label>
+      </div>
+
+      <div class="question">
+        <p>4. What is the past participle of "voir"?</p>
+        <label><input type="radio" name="q4" value="1"> vu</label><br>
+        <label><input type="radio" name="q4" value="0"> voir</label>
+      </div>
+
+      <div class="question">
+        <p>5. "À mon avis" means:</p>
+        <label><input type="radio" name="q5" value="1"> In my opinion</label><br>
+        <label><input type="radio" name="q5" value="0"> I am hungry</label>
+      </div>
+
+      <div class="question">
+        <p>6. Choose the correct translation: "They went" (fem.):</p>
+        <label><input type="radio" name="q6" value="1"> Elles sont allées</label><br>
+        <label><input type="radio" name="q6" value="0"> Elles vont</label>
+      </div>
+
+      <div class="question">
+        <p>7. Which expresses necessity?</p>
+        <label><input type="radio" name="q7" value="1"> Il faut que</label><br>
+        <label><input type="radio" name="q7" value="0"> Il est</label>
+      </div>
+
+      <div class="question">
+        <p>8. "Tout droit" means:</p>
+        <label><input type="radio" name="q8" value="1"> Straight ahead</label><br>
+        <label><input type="radio" name="q8" value="0"> Left</label>
+      </div>
+
+      <button class="btn" onclick="gradeTest()">Submit Test</button>
+      <div class="result" id="result"></div>
+    </div>
+
+    <div style="margin-top:18px;font-size:0.95rem;color:#555">Tip: scoring 6–8 suggests A2/B1; 4–5 suggests A1; below 4 suggests A0/A1 foundations.</div>
+  </div>
+
+  <script>
+    function gradeTest(){
+      const total=8; let score=0;
+      for(let i=1;i<=total;i++){const sel=document.querySelector('input[name="q'+i+'"]:checked'); if(sel) score+=Number(sel.value)}
+      const res=document.getElementById('result');
+      res.style.color = score>=6 ? 'green' : (score>=4 ? '#b07a00' : 'red');
+      res.textContent = `You scored ${score}/${total}. `;
+
+      // Simple unlocking logic for demo (localStorage keys used by topics pages)
+      if(score>=6){
+        res.textContent += 'Suggested level: A2/B1 — unlocking A1 + A2 topics.';
+        localStorage.setItem('a1-02-unlocked','true');
+        localStorage.setItem('a1-03-unlocked','true');
+        localStorage.setItem('a1-04-unlocked','true');
+        localStorage.setItem('a1-05-unlocked','true');
+        localStorage.setItem('a2-01-unlocked','true');
+        localStorage.setItem('a2-03-unlocked','true');
+      } else if(score>=4){
+        res.textContent += 'Suggested level: A1 — unlocking core A1 topics.';
+        localStorage.setItem('a1-02-unlocked','true');
+        localStorage.setItem('a1-03-unlocked','true');
+        localStorage.setItem('a1-04-unlocked','true');
+      } else {
+        res.textContent += 'Suggested level: beginner — start with A1 fundamentals.';
+        // Encourage starting at A1 but do not auto-unlock further topics
+        localStorage.setItem('a1-02-unlocked','true');
+      }
+
+      res.textContent += ' You can now visit the topics index.';
+      const link = document.createElement('a');
+      link.href = 'topics.html';
+      link.textContent = ' View topics';
+      link.style.marginLeft = '8px';
+      link.className = 'btn';
+      res.appendChild(link);
+    }
+  </script>
+</body>
+</html>
