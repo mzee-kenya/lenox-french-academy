@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!--
+  File: topics/a2-02-directions-places.html
+  Purpose: A2 lesson on directions and places with vocabulary, audio,
+  and a short quiz. Unlocks the next A2 topic when quiz passed.
+-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A2-02: Directions & Places | Lenox French Academy</title>
+  <style>
+    body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#f7fff0,#dcedc8);margin:0;padding:20px;color:#1e1e1e}
+    .container{max-width:900px;margin:auto;background:#fff;padding:24px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+    h1,h2{color:#2e7d32}
+    .vocab table{width:100%;border-collapse:collapse;margin-top:10px}
+    .vocab td,.vocab th{padding:8px;border-bottom:1px solid #eee}
+    .btn{background:#2e7d32;color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
+    .result{margin-top:12px;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../topics.html">← Back to Topics</a>
+    <h1>A2-02: Directions & Places</h1>
+    <div class="vocab">
+      <h2>📚 Key Vocabulary</h2>
+      <table>
+        <tr><th>French</th><th>English</th></tr>
+        <tr><td>à gauche</td><td>to the left</td></tr>
+        <tr><td>à droite</td><td>to the right</td></tr>
+        <tr><td>tout droit</td><td>straight ahead</td></tr>
+        <tr><td>la gare</td><td>train station</td></tr>
+        <tr><td>le musée</td><td>museum</td></tr>
+        <tr><td>la banque</td><td>bank</td></tr>
+      </table>
+      <p>Click a word to hear pronunciation:</p>
+      <p>
+        <button class="btn" onclick="speak('à gauche')">à gauche</button>
+        <button class="btn" onclick="speak('à droite')">à droite</button>
+        <button class="btn" onclick="speak('tout droit')">tout droit</button>
+      </p>
+    </div>
+
+    <div class="quiz">
+      <h2>📝 Quiz</h2>
+      <p>1. What does "tout droit" mean?</p>
+      <label><input type="radio" name="q1" value="correct"> Straight ahead</label><br>
+      <label><input type="radio" name="q1" value="wrong"> To the left</label><br>
+
+      <p>2. How do you say "train station"?</p>
+      <label><input type="radio" name="q2" value="correct"> la gare</label><br>
+      <label><input type="radio" name="q2" value="wrong"> le musée</label><br>
+
+      <p>3. "à droite" means:</p>
+      <label><input type="radio" name="q3" value="correct"> To the right</label><br>
+      <label><input type="radio" name="q3" value="wrong"> Straight</label><br>
+
+      <p>4. Which is a place?</p>
+      <label><input type="radio" name="q4" value="correct"> la banque</label><br>
+      <label><input type="radio" name="q4" value="wrong"> à gauche</label><br>
+
+      <p>5. Which phrase asks for direction?</p>
+      <label><input type="radio" name="q5" value="correct"> Où est la gare ?</label><br>
+      <label><input type="radio" name="q5" value="wrong"> Je suis ici.</label><br>
+
+      <button class="btn" onclick="checkQuiz()">Submit Answers</button>
+      <div class="result" id="result"></div>
+      <div id="nextTopic" style="display:none;margin-top:12px"><a class="btn" href="a2-03-past-tense.html">➡️ Continue to A2-03</a></div>
+    </div>
+  </div>
+
+  <script>
+    function speak(text){const u=new SpeechSynthesisUtterance(text);u.lang='fr-FR';speechSynthesis.speak(u)}
+    function checkQuiz(){const answers=document.querySelectorAll('input[type="radio"]:checked');let score=0;answers.forEach(a=>{if(a.value==='correct')score++});const r=document.getElementById('result');if(score>=4){r.textContent=`🎉 Good job! ${score}/5 — next topic unlocked.`;r.style.color='green';localStorage.setItem('a2-03-unlocked','true');document.getElementById('nextTopic').style.display='block'}else{r.textContent=`❌ ${score}/5 — try again.`;r.style.color='red';document.getElementById('nextTopic').style.display='none'}}
+  </script>
+</body>
+</html>

@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+  File: topics.html
+  Purpose: Index of all topics grouped by CEFR level for presentation.
+  Presentation notes: Cards under each level link to topic pages. Locked
+  cards demonstrate a progression idea; the unlock script below is
+  simplified for demo purposes and will not block loading if storage keys
+  are missing.
+-->
 <head>
   <meta charset="UTF-8" />
   <title>Topics | Lenox French Academy</title>
@@ -158,27 +166,34 @@
 
   </div>
 
-  <!-- Unlock Logic -->
+  <!-- Unlock Logic (simplified and safe for presentation):
+       This script checks optional localStorage flags to mark some topics
+       as locked. It is intentionally defensive to avoid runtime errors
+       during the demo if storage keys are absent or malformed.
+  -->
   <script>
-    const unlockedTopics = {
-      "topics/a1-01-alphabet.html": true,
-      "topics/a1-02-greetings.html": true,
-      "topics/a1-03-introductions.html": localStorage.getItem("a1-03-unlocked") === "true",
-      "topics/a1-04-numbers.html": localStorage.getItem("a1-04-unlocked") === "true",
-      "topics/a1-05-basic-verbs.html": localStorage.getItem("a1-05-unlocked") === "true"
-      "topics/a2-01-daily-activities.html": localstorage.getItem("a2-01-unlocked") === "true"
-    };
+    (function() {
+      const unlockedTopics = {
+        "topics/a1-01-alphabet.html": true,
+        "topics/a1-02-greetings.html": true,
+        "topics/a1-03-introductions.html": (localStorage.getItem("a1-03-unlocked") === "true"),
+        "topics/a1-04-numbers.html": (localStorage.getItem("a1-04-unlocked") === "true"),
+        "topics/a1-05-basic-verbs.html": (localStorage.getItem("a1-05-unlocked") === "true"),
+        "topics/a2-01-daily-activities.html": (localStorage.getItem("a2-01-unlocked") === "true")
+      };
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const links = document.querySelectorAll(".topic-card");
-      links.forEach(link => {
-        const href = link.getAttribute("href");
-        if (href && unlockedTopics[href] === false) {
-          link.classList.add("locked");
-          link.setAttribute("href", "#");
-        }
+      document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll(".topic-card");
+        links.forEach(link => {
+          const href = link.getAttribute("href");
+          // If href maps to a locked topic, neutralize the link and mark it
+          if (href && unlockedTopics.hasOwnProperty(href) && !unlockedTopics[href]) {
+            link.classList.add("locked");
+            link.setAttribute("href", "#");
+          }
+        });
       });
-    });
+    })();
   </script>
 </body>
 </html>

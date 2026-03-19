@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+  File: index.html
+  Purpose: Landing page for the Lenox French Academy mini-site.
+  Presentation notes: Use this page to introduce the course levels (A1-B2),
+  show navigation to topics, and explain the site structure to reviewers.
+  Comments in this file point to important sections: styles, header,
+  introduction, action buttons, and footer.
+-->
 <head>
   <meta charset="UTF-8" />
   <title>Lenox French Academy | Learn French from A1 to B2</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <style>
+    /*
+      Styles below define the visual theme for presentation.
+      Keep CSS simple for easy demonstration during the talk.
+    */
     body {
       margin: 0;
       padding: 0;
@@ -111,12 +123,15 @@
   </style>
 </head>
 <body>
-  <div class="container">
+    <!-- Main content container: center-aligned card used for presentation -->
+    <div class="container">
     <header>
+      <!-- Header: title and subtitle explain the project's goal -->
       <h1>🇫🇷 Lenox French Academy</h1>
       <p>Master French from A1 to B2 — Learn with Fun and Focus 🎓</p>
     </header>
 
+    <!-- Intro section: summarizes learning outcomes by CEFR level -->
     <section class="intro">
       <h2>📘 What You’ll Learn</h2>
       <ul>
@@ -127,14 +142,20 @@
       </ul>
     </section>
 
+    <!-- Actions section: quick navigation for demoing the content flow -->
     <section class="actions">
       <h2>🚀 Ready to Begin?</h2>
+      <!--
+        Buttons link to sample topic, full topics index, and auxiliary pages.
+        If a target page is not present, the link is a placeholder for later.
+      -->
       <a href="topics/a1-01-alphabet.html" class="btn">▶️ Start Learning</a>
       <a href="topics.html" class="btn">📚 View All Topics</a>
       <a href="placement-test.html" class="btn">🎓 Take Placement Test</a>
       <a href="about.html" class="btn">ℹ️ About Us</a>
     </section>
 
+    <!-- Footer: copyright and quick credits for the presentation -->
     <footer>
       <p>&copy; 2025 Lenox French Academy | Powered by Passion, Built with Purpose 💚</p>
     </footer>
