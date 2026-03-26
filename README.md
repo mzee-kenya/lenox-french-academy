@@ -1,4 +1,4 @@
-﻿Lenox French Academy — Presentation Guide
+﻿Kirinyaga French Academy — Presentation Guide
 
 Overview
 - This is a small static mini-site demonstrating beginner French lessons (A1-A2).
@@ -42,4 +42,3 @@ License & Credits
 - This demo was prepared for presentation purposes. Feel free to adapt and extend it.
 
 Contact
-- If you want me to add a presenter slide view or convert this to a small SPA, tell me which features you'd like next.
